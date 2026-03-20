@@ -73,7 +73,7 @@ VIDEOS = {
     "бәрекелді": [
         {
             "quiz_id":      "b0",
-            "file_id":      "",
+            "file_id":      "BAACAgIAAxkDAAIFkmm9LcxOGoUf23CbOiPvAy40AcoYAAIlmgAC3jrpSWj4kzUG_RPVOgQ",
             "caption_kz":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
             "caption_ru":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Ақсақалдың «Әй, бәрекелді!» одағайы қандай көңіл күйді білдіреді?",
@@ -84,7 +84,7 @@ VIDEOS = {
         },
         {
             "quiz_id":      "b1",
-            "file_id":      "",
+            "file_id":      "BAACAgIAAxkDAAIFkmm9LcxOGoUf23CbOiPvAy40AcoYAAIlmgAC3jrpSWj4kzUG_RPVOgQ",
             "caption_kz":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
             "caption_ru":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Үлкендердің «Әй, бәрекелді!», «Әп-бәрекелді!» сөздері қандай көңіл күйді білдіреді?",
