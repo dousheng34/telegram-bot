@@ -59,7 +59,7 @@ def t(uid, key, **kw):
 
 VIDEOS = {
     "алақай": {
-        "file_id": "BAACAgIAAxkBAAIG92m9YcilPYnKCtK-3llK1B_JlsneAALnnAAC3jrpSTreqHlpF6ncOgQ",
+        "file_id": "BAACAgIAAxkBAAIHOWm9cBpCjFB6WQ8uUxVxbHR5Qhe3AALBnQAC3jrpSRE6u0kgxgKWOgQ",
         "caption_kz": "🎬 Алақай! — Жаужүрек мың бала",
         "question_kz": "«Жаужүрек мың бала» фильмінде қолданылған «Алақай!» одағайы кейіпкердің қандай эмоциясын білдіреді?",
         "options_kz": ["A. Қуаныш 😀", "Ә. Таңдану 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
