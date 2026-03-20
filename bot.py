@@ -53,9 +53,11 @@ VIDEOS = {
     # ───── 2. БӘРЕКЕЛДІ ─────
     "бәрекелді": [
         {
-            "quiz_id":      "b0",
-            b0 - Әй, Бәрекелді!
-    "file_id":      "BAACAgIAAxkDAAIGdWm9WA6LnHgu5n5kQ_Azw2t_XjD1AAJnnAAC3jrpSUpy1g5iDUQZOgQ",,
+            b0 - Әй-Бәрекелді 
+
+{
+    "quiz_id":      "b0",
+    "file_id":      "BAACAgIAAxkDAAIGdWm9WA6LnHgu5n5kQ_Azw2t_XjD1AAJnnAAC3jrpSUpy1g5iDUQZOgQ",,,
             "caption_kz":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "«Жаужүрек мың бала» фильмінде Ақсақалдың «Әй, бәрекелді!» одағайы қандай көңіл күйді білдіреді?",
             "options_kz":   ["А. Риза болу, сүйсіну 😍", "Ә. Таңырқау 😲", "Б. Өкініш 😔", "В. Алаңдау 😨"],
