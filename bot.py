@@ -15,13 +15,12 @@ logging.basicConfig(format="%(asctime)s | %(message)s", level=logging.INFO, date
 log = logging.getLogger(__name__)
 session = requests.Session()
 
-user_lang = {}  # user_id → "kz" | "ru"
+# тіл тек қазақша (kz only)
 
 # ==================== ТІЛДЕР ====================
 TEXTS = {
     "kz": {
         "welcome":     "🎬 <b>Қош келдіңіз!</b>\n\nОдақтарды таңдаңыз:",
-        "choose_lang": "🌐 Тілді таңдаңыз / Выберите язык:",
         "list_title":  "📋 <b>Одақтар ({n}):</b>\n\n{items}",
         "help_text":   "❓ <b>Қолдау</b>\n\n👤 Админ: @aseka0303",
         "not_found":   "🤔 <b>«{w}»</b> тізімде жоқ.\n/list — барлық одақтар",
@@ -31,26 +30,11 @@ TEXTS = {
         "btn_list":    "📋 Тізім",
         "btn_help":    "❓ Қолдау",
         "btn_menu":    "🔙 Мәзір",
-        "btn_lang":    "🌐 Тіл",
-    },
-    "ru": {
-        "welcome":     "🎬 <b>Добро пожаловать!</b>\n\nВыберите союз:",
-        "choose_lang": "🌐 Тілді таңдаңыз / Выберите язык:",
-        "list_title":  "📋 <b>Союзы ({n}):</b>\n\n{items}",
-        "help_text":   "❓ <b>Поддержка</b>\n\n👤 Админ: @aseka0303",
-        "not_found":   "🤔 <b>«{w}»</b> не найдено.\n/list — все союзы",
-        "quiz_header": "❓ <b>Вопрос теста:</b>\n\n{q}\n\n👇 <b>Выберите ответ:</b>",
-        "correct":     "✅ <b>Правильно! Отлично!</b>\n\n{ans}",
-        "wrong":       "❌ <b>Неверно!</b>\n\nВы: {user}\nПравильно: <b>{correct}</b>",
-        "btn_list":    "📋 Список",
-        "btn_help":    "❓ Помощь",
-        "btn_menu":    "🔙 Меню",
-        "btn_lang":    "🌐 Язык",
-    },
+    }
 }
 
 def t(uid, key, **kw):
-    lang = user_lang.get(uid, "kz")
+    lang = "kz"
     tmpl = TEXTS[lang].get(key, key)
     return tmpl.format(**kw) if kw else tmpl
 
@@ -61,11 +45,8 @@ VIDEOS = {
     "алақай": {
         "file_id":      "BAACAgIAAxkDAAIFh2m9KLKFrD-UPiPoHe_s9-aPwVgvAALZmQAC3jrpSX9Vu3k6Xp1FOgQ",
         "caption_kz":   "🎬 Жаужүрек мың бала",
-        "caption_ru":   "🎬 Жаужүрек мың бала",
         "question_kz":  "«Жаужүрек мың бала» фильміндегі «Алақай!» одағайы кейіпкердің қандай эмоциясын білдіреді?",
-        "question_ru":  "Какую эмоцию выражает «Алақай!» в фильме «Жаужүрек мың бала»?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңдану 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
-        "options_ru":   ["A. Радость 😀", "Б. Удивление 😲", "В. Сожаление 😔", "Г. Страх 😨"],
         "correct":      0,
     },
 
@@ -73,24 +54,18 @@ VIDEOS = {
     "бәрекелді": [
         {
             "quiz_id":      "b0",
-            "file_id":      "BAACAgIAAxkDAAIFkmm9LcxOGoUf23CbOiPvAy40AcoYAAIlmgAC3jrpSWj4kzUG_RPVOgQ",
+            "file_id":      "BAACAgIAAxkDAAIFwGm9OJRFMpvO0SsyvX5GuFCYmt3KAALOmgAC3jrpSRQZKG3lBklFOgQ",
             "caption_kz":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
-            "caption_ru":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Ақсақалдың «Әй, бәрекелді!» одағайы қандай көңіл күйді білдіреді?",
-            "question_ru":  "Что выражает «Әй, бәрекелді!» Аксакала?",
             "options_kz":   ["A. Риза болу 😍", "Ә. Таңырқау 😲", "Б. Өкініш 😔", "В. Алаңдау 😨"],
-            "options_ru":   ["A. Одобрение 😍", "Б. Удивление 😲", "В. Сожаление 😔", "Г. Беспокойство 😨"],
             "correct":      0,
         },
         {
             "quiz_id":      "b1",
             "file_id":      "BAACAgIAAxkDAAIFrWm9MbA_mHFUVknvLAue926hDc5kAAJbmgAC3jrpSbGjRuOiz0WyOgQ",
             "caption_kz":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
-            "caption_ru":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Үлкендердің «Әй, бәрекелді!», «Әп-бәрекелді!» сөздері қандай көңіл күйді білдіреді?",
-            "question_ru":  "«Әй, бәрекелді!», «Әп-бәрекелді!» от взрослых — что выражают?",
             "options_kz":   ["A. Мұң 😔", "Ә. Ашу 😡", "Б. Таңдану 😲", "В. Риза болу, қолдастау 🤲"],
-            "options_ru":   ["A. Грусть 😔", "Б. Злость 😡", "В. Удивление 😲", "Г. Одобрение, поддержка 🤲"],
             "correct":      3,
         },
     ],
@@ -101,22 +76,16 @@ VIDEOS = {
             "quiz_id":      "je0",
             "file_id":      "",
             "caption_kz":   "🎬 1️⃣ Же-Же — Жаужүрек мың бала",
-            "caption_ru":   "🎬 1️⃣ Же-Же — Жаужүрек мың бала",
             "question_kz":  "«Же-же» одағайы қандай көңіл күйді білдіреді?",
-            "question_ru":  "Что выражает «Же-же»?",
             "options_kz":   ["A. Қуаныш 😀", "Ә. Кейіген ашу, зеку 😤", "Б. Мұң 😔", "В. Таңдану 😲"],
-            "options_ru":   ["A. Радость 😀", "Б. Раздражение, укор 😤", "В. Грусть 😔", "Г. Удивление 😲"],
             "correct":      1,
         },
         {
             "quiz_id":      "je1",
             "file_id":      "",
             "caption_kz":   "🎬 2️⃣ Ракымжанның «Же» — Жаужүрек мың бала",
-            "caption_ru":   "🎬 2️⃣ «Же» Ракымжана — Жаужүрек мың бала",
             "question_kz":  "Ракымжанның «Же» одағайы қандай сезімді білдіреді?",
-            "question_ru":  "«Же» Ракымжана — что выражает?",
             "options_kz":   ["A. Сабырға шақыру 🤚", "Ә. Ашу 😡", "Б. Қуаныш 😀", "В. Өкініш 😔"],
-            "options_ru":   ["A. Призыв к терпению 🤚", "Б. Злость 😡", "В. Радость 😀", "Г. Сожаление 😔"],
             "correct":      0,
         },
     ],
@@ -125,11 +94,8 @@ VIDEOS = {
     "қап": {
         "file_id":      "",
         "caption_kz":   "🎬 Қап! — Жаужүрек мың бала",
-        "caption_ru":   "🎬 Қап! — Жаужүрек мың бала",
         "question_kz":  "Күресте жеңіліс болған сәтте айтылған «Қап!» одағайы қандай сезімді білдіреді?",
-        "question_ru":  "«Қап!» в момент поражения в борьбе — что выражает?",
         "options_kz":   ["A. Қуану 😀", "Ә. Өкініш, қапалану 😔", "Б. Қорқу 😨", "В. Қолдау 🤲"],
-        "options_ru":   ["A. Радость 😀", "Б. Сожаление, огорчение 😔", "В. Страх 😨", "Г. Поддержка 🤲"],
         "correct":      1,
     },
 
@@ -139,22 +105,16 @@ VIDEOS = {
             "quiz_id":      "oybay0",
             "file_id":      "",
             "caption_kz":   "🎬 1️⃣ Ойбай, жыланды қара! — Алдар косе",
-            "caption_ru":   "🎬 1️⃣ Ойбай, жыланды қара! — Алдар косе",
             "question_kz":  "Сауданың «Ойбай, жыланды қара!» дейтіні қандай көңіл күйді білдіреді?",
-            "question_ru":  "«Ойбай, жыланды қара!» — что выражает?",
             "options_kz":   ["A. Риза болу 😍", "Ә. Қуаныш 😀", "Б. Қорқу, абыржу 😱", "В. Өкініш 😔"],
-            "options_ru":   ["A. Одобрение 😍", "Б. Радость 😀", "В. Страх, растерянность 😱", "Г. Сожаление 😔"],
             "correct":      2,
         },
         {
             "quiz_id":      "oybay1",
             "file_id":      "",
             "caption_kz":   "🎬 2️⃣ Ойбай! — Алдар косе",
-            "caption_ru":   "🎬 2️⃣ Ойбай! — Алдар косе",
             "question_kz":  "«Ойбай!» одағайы қандай көңіл күйді білдіреді?",
-            "question_ru":  "Что выражает «Ойбай!»?",
             "options_kz":   ["A. Қуаныш 😀", "Ә. Қорқу, састу 😱", "Б. Риза болу 😍", "В. Таңқалу 😲"],
-            "options_ru":   ["A. Радость 😀", "Б. Страх, растерянность 😱", "В. Одобрение 😍", "Г. Удивление 😲"],
             "correct":      1,
         },
     ],
@@ -163,11 +123,8 @@ VIDEOS = {
     "япыр-ай": {
         "file_id":      "",
         "caption_kz":   "🎬 Япыр-ай! — Алдар косе",
-        "caption_ru":   "🎬 Япыр-ай! — Алдар косе",
         "question_kz":  "«Япыр-ай!» одағайы қандай сезімді білдіреді?",
-        "question_ru":  "Что выражает «Япыр-ай!»?",
         "options_kz":   ["A. Мұң 😔", "Ә. Қуаныш 😀", "Б. Таңдану, қызығу 😲", "В. Ашу 😡"],
-        "options_ru":   ["A. Грусть 😔", "Б. Радость 😀", "В. Удивление, интерес 😲", "Г. Злость 😡"],
         "correct":      2,
     },
 
@@ -175,11 +132,8 @@ VIDEOS = {
     "әй": {
         "file_id":      "",
         "caption_kz":   "🎬 Әй, әй! — Алдар косе",
-        "caption_ru":   "🎬 Әй, әй! — Алдар косе",
         "question_kz":  "Байдың «Әй, әй!» дейтіні қандай сезімді білдіреді?",
-        "question_ru":  "Что выражает «Әй, әй!» бая?",
         "options_kz":   ["A. Мұң 😔", "Ә. Қуаныш 😀", "Б. Таңдану 😲", "В. Абдырау 😵"],
-        "options_ru":   ["A. Грусть 😔", "Б. Радость 😀", "В. Удивление 😲", "Г. Растерянность 😵"],
         "correct":      3,
     },
 
@@ -187,11 +141,8 @@ VIDEOS = {
     "әттеген-ай": {
         "file_id":      "",
         "caption_kz":   "🎬 Әттеген-ай! — Жаужүрек мың бала",
-        "caption_ru":   "🎬 Әттеген-ай! — Жаужүрек мың бала",
         "question_kz":  "Ақсақалдың «Әттеген-ай!» одағайы қандай көңіл күйді білдіреді?",
-        "question_ru":  "Что выражает «Әттеген-ай!» Аксакала?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңқалу 😲", "Б. Өкініш, налу 😔", "В. Қорқыныш 😨"],
-        "options_ru":   ["A. Радость 😀", "Б. Удивление 😲", "В. Сожаление, огорчение 😔", "Г. Страх 😨"],
         "correct":      2,
     },
 
@@ -199,11 +150,8 @@ VIDEOS = {
     "құдайым-ау": {
         "file_id":      "",
         "caption_kz":   "🎬 Құдайым-ау! — Жаужүрек мың бала",
-        "caption_ru":   "🎬 Құдайым-ау! — Жаужүрек мың бала",
         "question_kz":  "«Құдайым-ау!» одағайы қандай көңіл күйді білдіреді?",
-        "question_ru":  "Что выражает «Құдайым-ау!»?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңқалу 😲", "Б. Қайғы, шошу 😱", "В. Риза болу 😍"],
-        "options_ru":   ["A. Радость 😀", "Б. Удивление 😲", "В. Горе, испуг 😱", "Г. Одобрение 😍"],
         "correct":      2,
     },
 
@@ -211,11 +159,8 @@ VIDEOS = {
     "мә": {
         "file_id":      "",
         "caption_kz":   "🎬 Мә! — Жаужүрек мың бала",
-        "caption_ru":   "🎬 Мә! — Жаужүрек мың бала",
         "question_kz":  "«Мә!» одағайы қандай сезімді білдіреді?",
-        "question_ru":  "Что выражает «Мә!»?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңқалу, таңырқау 😲", "Б. Мұң 😔", "В. Ашу 😡"],
-        "options_ru":   ["A. Радость 😀", "Б. Удивление 😲", "В. Грусть 😔", "Г. Злость 😡"],
         "correct":      1,
     },
 }
@@ -251,7 +196,6 @@ def set_bot_commands():
 def lang_kb():
     return {"inline_keyboard": [[
         {"text": "🇰🇿 Қазақша", "callback_data": "lang_kz"},
-        {"text": "🇷🇺 Русский",  "callback_data": "lang_ru"},
     ]]}
 
 def main_kb(uid):
@@ -265,7 +209,6 @@ def main_kb(uid):
     rows.append([
         {"text": t(uid, "btn_list")},
         {"text": t(uid, "btn_help")},
-        {"text": t(uid, "btn_lang")},
     ])
     return {"keyboard": rows, "resize_keyboard": True, "persistent": True}
 
@@ -294,7 +237,7 @@ def edit(cid, mid, text, kb=None):
     except Exception as e: log.error(f"edit(): {e}")
 
 def send_video_quiz(cid, word):
-    lang = user_lang.get(cid, "kz")
+    lang = "kz"
     data = VIDEOS.get(word)
     if not data:
         send(cid, t(cid, "not_found", w=word)); return
@@ -347,13 +290,8 @@ def on_message(msg):
     cmd = clean.lower().split()[0]
 
     if cmd in ("/start", "/menu"):
-        if cid not in user_lang:
-            send(cid, t(cid, "choose_lang"), kb=lang_kb())
-        else:
-            send(cid, t(cid, "welcome"), kb=main_kb(cid))
+        send(cid, t(cid, "welcome"), kb=main_kb(cid))
 
-    elif cmd == "/lang":
-        send(cid, t(cid, "choose_lang"), kb=lang_kb())
 
     elif cmd == "/list":
         items = " • ".join(f"<code>{w}</code>" for w in VIDEOS)
@@ -378,11 +316,7 @@ def on_callback(cb):
                           json={"callback_query_id": cb["id"]}, timeout=5)
         except Exception: pass
 
-        if data.startswith("lang_"):
-            user_lang[cid] = data.split("_")[1]
-            send(cid, t(cid, "welcome"), kb=main_kb(cid))
-
-        elif data.startswith("q|"):
+        if data.startswith("q|"):
             parts = data.split("|")
             if len(parts) != 3: return
             _, qid, ans_str = parts
@@ -390,7 +324,7 @@ def on_callback(cb):
             except ValueError: return
             vd = get_quiz(qid)
             if vd:
-                lang = user_lang.get(cid, "kz")
+                lang = "kz"
                 c    = vd["correct"]
                 opts = vd.get(f"options_{lang}", vd.get("options_kz", []))
                 if ans == c:
