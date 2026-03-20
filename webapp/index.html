@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Диас ИИ</title>
+<script src="https://telegram.org/js/telegram-web-app.js"></script>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{--bg:#0f0f0f;--bg2:#1a1a1a;--bg3:#262626;--green:#7CFC00;--text:#fff;--sub:#888;--r:14px}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;min-height:100vh}
+
+.hdr{position:sticky;top:0;z-index:50;background:rgba(15,15,15,.97);backdrop-filter:blur(12px);padding:12px 16px;display:flex;align-items:center;gap:10px;border-bottom:1px solid rgba(255,255,255,.06)}
+.hdr-logo{width:38px;height:38px;background:var(--green);border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0}
+.hdr-name{font-size:16px;font-weight:700}
+.hdr-sub{font-size:11px;color:var(--sub)}
+.hdr-badge{margin-left:auto;background:var(--bg3);color:var(--sub);font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px;border:1px solid rgba(255,255,255,.1)}
+
+.srch{padding:12px 16px 6px}
+.srch input{width:100%;background:var(--bg3);border:1.5px solid rgba(255,255,255,.07);border-radius:12px;padding:10px 14px 10px 38px;color:#fff;font-size:15px;outline:none;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2.5'%3E%3Ccircle cx='11' cy='11' r='8'/%3E%3Cpath d='m21 21-4.35-4.35'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:12px center;transition:border-color .2s}
+.srch input:focus{border-color:var(--green)}
+.srch input::placeholder{color:#555}
+
+.sec{padding:0 16px 12px}
+.sec-hdr{display:flex;align-items:center;justify-content:space-between;padding:14px 0 8px}
+.sec-ttl{font-size:12px;font-weight:700;color:var(--sub);letter-spacing:.6px}
+.sec-cnt{font-size:11px;color:var(--sub);background:var(--bg3);padding:2px 8px;border-radius:20px}
+
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.card{background:var(--bg2);border-radius:var(--r);padding:16px 14px 14px;cursor:pointer;position:relative;border:1.5px solid rgba(255,255,255,.05);transition:transform .15s,background .15s;animation:su .3s ease both}
+@keyframes su{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.card:active{transform:scale(.95);background:var(--bg3)}
+.c-emoji{font-size:26px;margin-bottom:8px;display:block}
+.c-word{font-size:17px;font-weight:700;margin-bottom:4px}
+.c-stat{font-size:11px;color:#555}
+.c-btn{position:absolute;bottom:12px;right:12px;width:32px;height:32px;background:var(--bg3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px}
+
+.pg{display:none;padding:16px}
+.pg.on{display:block}
+
+.scard{background:var(--bg2);border-radius:var(--r);padding:16px;margin-bottom:10px;display:flex;align-items:center;gap:14px}
+.sico{width:44px;height:44px;border-radius:12px;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0}
+.sval{font-size:22px;font-weight:800}
+.slbl{font-size:12px;color:var(--sub)}
+
+.iblock{background:var(--bg2);border-radius:var(--r);padding:16px;margin-bottom:10px}
+.ittl{font-size:13px;font-weight:700;color:var(--green);margin-bottom:6px}
+.itxt{font-size:13px;color:var(--sub);line-height:1.7}
+
+.soon-banner{margin:12px 16px;background:linear-gradient(135deg,#1a1a1a,#222);border-radius:var(--r);padding:16px;border:1px solid rgba(124,252,0,.15)}
+.sb-title{font-size:15px;font-weight:700;color:var(--green);margin-bottom:4px}
+.sb-sub{font-size:12px;color:var(--sub);line-height:1.6}
+
+.nav{position:fixed;bottom:0;left:0;right:0;background:rgba(15,15,15,.97);backdrop-filter:blur(10px);border-top:1px solid rgba(255,255,255,.07);display:flex;padding-bottom:env(safe-area-inset-bottom,0)}
+.nbtn{flex:1;padding:10px 0 8px;background:none;border:none;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:3px;color:var(--sub);font-size:10px;transition:color .2s}
+.nbtn.on{color:var(--green)}
+.nico{font-size:22px}
+
+.wrap{padding-bottom:70px}
+.empty{text-align:center;padding:40px 20px;color:var(--sub);grid-column:span 2}
+.empty-i{font-size:44px;margin-bottom:10px}
+
+.toast{position:fixed;bottom:80px;left:50%;transform:translateX(-50%) translateY(20px);background:var(--bg3);color:var(--text);border:1px solid rgba(255,255,255,.1);padding:10px 18px;border-radius:20px;font-size:13px;opacity:0;transition:all .3s;z-index:300;white-space:nowrap;pointer-events:none}
+.toast.on{opacity:1;transform:translateX(-50%) translateY(0)}
+</style>
+</head>
+<body>
+<div class="toast" id="toast"></div>
+
+<div class="hdr">
+  <div class="hdr-logo">🎬</div>
+  <div><div class="hdr-name">Диас ИИ</div><div class="hdr-sub">Қазақ одағайлары</div></div>
+  <div class="hdr-badge">Жақында 🔜</div>
+</div>
+
+<div class="wrap">
+
+  <div class="pg on" id="pg-home">
+    <div class="srch"><input type="text" placeholder="Сөз іздеу..." oninput="filter(this.value)"></div>
+
+    <div class="soon-banner">
+      <div class="sb-title">🎬 Нақты кино үзінділері дайындалуда!</div>
+      <div class="sb-sub">Барлық 31 одағайға нақты қазақ кино/сериал үзінділері қосылады.<br>Жақында іске қосылады! ⏳</div>
+    </div>
+
+    <div class="sec">
+      <div class="sec-hdr">
+        <span class="sec-ttl">⏳ БАРЛЫҚ ОДАҒАЙЛАР</span>
+        <span class="sec-cnt" id="cnt">31</span>
+      </div>
+      <div class="grid" id="grid"></div>
+    </div>
+  </div>
+
+  <div class="pg" id="pg-stats">
+    <div style="height:16px"></div>
+    <div class="scard"><div class="sico">📚</div><div><div class="sval">31</div><div class="slbl">Барлық одағайлар</div></div></div>
+    <div class="scard"><div class="sico">🎬</div><div><div class="sval" style="color:var(--green)">Жақында</div><div class="slbl">Кино үзінділері дайындалуда</div></div></div>
+    <div class="scard"><div class="sico">👆</div><div><div class="sval" id="sc">0</div><div class="slbl">Осы сессияда қаралды</div></div></div>
+  </div>
+
+  <div class="pg" id="pg-info">
+    <div style="height:16px"></div>
+    <div class="iblock"><div class="ittl">🤖 Бот туралы</div><div class="itxt">Диас ИИ — қазақ тіліндегі эмоционалды одағайларға нақты кино үзінділерін жіберетін бот.<br><br>Барлық 31 одағайға сәйкес кино/сериал үзінділері дайындалуда.</div></div>
+    <div class="iblock"><div class="ittl">📅 Жоспар</div><div class="itxt">✅ 31 одағай тізімі дайын<br>⏳ Кино үзінділері іріктелуде<br>⏳ Жақын арада іске қосылады</div></div>
+    <div class="iblock"><div class="ittl">💬 Байланыс</div><div class="itxt">Админ: @aseka0303<br>Ұсыныс немесе сұрақ болса хабарласыңыз!</div></div>
+  </div>
+
+</div>
+
+<div class="nav">
+  <button class="nbtn on" id="nb-home" onclick="page('home')"><span class="nico">🏠</span>Басты</button>
+  <button class="nbtn" id="nb-stats" onclick="page('stats')"><span class="nico">📊</span>Статистика</button>
+  <button class="nbtn" id="nb-info" onclick="page('info')"><span class="nico">ℹ️</span>Туралы</button>
+</div>
+
+<script>
+const tg=window.Telegram?.WebApp;
+if(tg){tg.ready();tg.expand();}
+
+const WORDS=[
+  {w:"\u0430",e:"😮"},{w:"\u043e\u0439",e:"🤔"},{w:"\u043e\u0439\u0431\u0430\u0439",e:"😱"},
+  {w:"\u04d9",e:"😯"},{w:"\u043e",e:"😶"},{w:"\u043e\u0439\u043f\u044b\u0440\u043c\u0430\u0439",e:"😲"},
+  {w:"\u044f\u043f\u044b\u0440\u043c\u0430\u0439",e:"🤯"},{w:"\u0430\u043f\u044b\u0440-\u0430\u0439",e:"😳"},
+  {w:"\u043f\u0430\u04bb-\u043f\u0430\u04bb",e:"👏"},{w:"\u043f\u0430\u0439-\u043f\u0430\u0439",e:"🤩"},
+  {w:"\u0431\u04d9\u0440\u0435\u043a\u0435\u043b\u0434\u0456",e:"👍"},{w:"\u0430\u043b\u0430\u049b\u0430\u0439",e:"🎉"},
+  {w:"\u049b\u0430\u043f",e:"😤"},{w:"\u049b\u0430\u043f-\u0430\u0439",e:"😠"},
+  {w:"\u04d9\u0442\u0442\u0435\u04a3",e:"😔"},{w:"\u04d9\u0442\u0442\u0435\u0433\u0435\u043d-\u0430\u0439",e:"😞"},
+  {w:"\u0448\u0456\u0440\u043a\u0456\u043d",e:"😍"},{w:"\u0448\u0456\u0440\u043a\u0456\u043d-\u0430\u0439",e:"🥰"},
+  {w:"\u0442\u04af\u0443",e:"🙄"},{w:"\u0442\u04d9\u0439\u0456\u0440\u0456",e:"😏"},
+  {w:"\u0442\u04d9\u0439\u0442",e:"🛑"},{w:"\u0436\u04d9",e:"😌"},
+  {w:"\u0443\u04bb",e:"😮‍💨"},{w:"\u0430\u04bb",e:"😦"},
+  {w:"\u0435\u04bb",e:"😑"},{w:"\u044d\u0445",e:"😒"},
+  {w:"\u0431\u04d9\u0441\u0435",e:"😏"},{w:"\u043e \u0442\u043e\u0431\u0430",e:"🙏"},
+  {w:"\u049b\u04b1\u0434\u0430\u0439-\u0430\u0439",e:"🤲"},{w:"\u0436\u0430\u0441\u0430\u0493\u0430\u043d-\u0430\u0439",e:"😩"},
+  {w:"\u043c\u0430\u0441\u049b\u0430\u0440\u0430-\u0430\u0439",e:"🤦"}
+];
+
+let clicks=0;
+
+function render(f=""){
+  const g=document.getElementById("grid");
+  g.innerHTML="";
+  let n=0;
+  WORDS.forEach((d,i)=>{
+    if(f&&!d.w.includes(f))return;
+    const c=document.createElement("div");
+    c.className="card";
+    c.style.animationDelay=(i*.03)+"s";
+    c.innerHTML=`<span class="c-emoji">${d.e}</span><div class="c-word">${d.w}</div><div class="c-stat">⏳ Жақында</div><div class="c-btn">⏳</div>`;
+    c.onclick=()=>{
+      clicks++;
+      document.getElementById("sc").textContent=clicks;
+      toast("\u0416\u0430\u049b\u044b\u043d\u0434\u0430 \u049b\u043e\u0441\u044b\u043b\u0430\u0434\u044b! \U0001f3ac");
+    };
+    g.appendChild(c);n++;
+  });
+  document.getElementById("cnt").textContent=n;
+  if(f&&!n)g.innerHTML=`<div class="empty"><div class="empty-i">🔍</div>«${f}» табылмады</div>`;
+}
+
+function filter(v){render(v.toLowerCase().trim());}
+function page(n){
+  document.querySelectorAll(".pg").forEach(p=>p.classList.remove("on"));
+  document.querySelectorAll(".nbtn").forEach(b=>b.classList.remove("on"));
+  document.getElementById("pg-"+n).classList.add("on");
+  document.getElementById("nb-"+n).classList.add("on");
+}
+function toast(m){
+  const t=document.getElementById("toast");
+  t.textContent=m;t.classList.add("on");
+  setTimeout(()=>t.classList.remove("on"),2500);
+}
+
+render();
+</script>
+</body>
+</html>
