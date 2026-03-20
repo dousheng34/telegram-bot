@@ -54,7 +54,8 @@ VIDEOS = {
     "бәрекелді": [
         {
             "quiz_id":      "b0",
-            "file_id":      "BAACAgIAAxkDAAIGJmm9TJQ2ourhcETiarcIrhOjF9DrAAK6mwAC3jrpST5bpjxdZdDFOgQ",
+            b0 - Әй, Бәрекелді!
+    "file_id":      "BAACAgIAAxkDAAIGdWm9WA6LnHgu5n5kQ_Azw2t_XjD1AAJnnAAC3jrpSUpy1g5iDUQZOgQ",,
             "caption_kz":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "«Жаужүрек мың бала» фильмінде Ақсақалдың «Әй, бәрекелді!» одағайы қандай көңіл күйді білдіреді?",
             "options_kz":   ["А. Риза болу, сүйсіну 😍", "Ә. Таңырқау 😲", "Б. Өкініш 😔", "В. Алаңдау 😨"],
@@ -62,7 +63,7 @@ VIDEOS = {
         },
         {
             "quiz_id":      "b1",
-            "file_id":      "BAACAgIAAxkDAAIGJmm9TJQ2ourhcETiarcIrhOjF9DrAAK6mwAC3jrpST5bpjxdZdDFOgQ",
+            "file_id":      "BAACAgIAAxkDAAIGdmm9WBs_8Xv5L2JU_4mGrbgf6L5CAAJpnAAC3jrpSWdeYRM-nNXhOgQ",
             "caption_kz":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "«Жаужүрек мың бала» фильмінде балалар күресіп жатқанда үлкендердің «Әй, бәрекелді!», «Әп-бәрекелді!» сөздері қандай көңіл күйді білдіреді?",
             "options_kz":   ["А. Мұң, өкініш 😔", "Ә. Ашу, реніш 😡", "Б. Таңдану, абыржу 😲", "В. Риза болу, қолпаштау 🤲"],
@@ -74,7 +75,7 @@ VIDEOS = {
     "жә-жә": [
         {
             "quiz_id":      "je0",
-            "file_id":      "BAACAgIAAxkDAAIGKGm9TKhP3RCnMMxmJNkgM4PwQjxYAAK9mwAC3jrpSZMTS1nlUUIUOgQ",
+            "file_id":      "BAACAgIAAxkDAAIGd2m9WCbUVoW9n-FEwHEBLMLqp0cXAAJqnAAC3jrpSbpNtrvOu796OgQ",
             "caption_kz":   "🎬 1️⃣ Же-Же — Жаужүрек мың бала",
             "question_kz":  "«Жаужүрек мың бала» фильміндегі «Жә-жә» одағайы қандай көңіл күйді білдіреді?",
             "options_kz":   ["А. Қуаныш 😀", "Ә. Кейіген ашу, зеку 😤", "Б. Мұң 😔", "В. Таңдану 😲"],
@@ -82,7 +83,7 @@ VIDEOS = {
         },
         {
             "quiz_id":      "je1",
-            "file_id":      "",
+            ""file_id":      "BAACAgIAAxkDAAIGeGm9WC4ZmoqQEMlLLiqtoLBCzZXaAAJrnAAC3jrpSeb0wM03dKRVOgQ",
             "caption_kz":   "🎬 2️⃣ Ракымжаннын «Же» — Жаужүрек мың бала",
             "question_kz":  "«Жаужүрек мың бала» фильміндегі «Жә» одағайы қандай сезімді білдіреді?",
             "options_kz":   ["А. Сабырға шақыру, тоқтату 🤚", "Ә. Ашу, реніш 😡", "Б. Қуаныш, қолпаштау 🤲", "В. Өкініш, мұңаю 😔"],
@@ -92,7 +93,7 @@ VIDEOS = {
 
     # ───── 4. ҚАП ─────
     "қап": {
-        "file_id":      "BAACAgIAAxkDAAIGLGm9TMcx1Jmy-rXIQviPogN1M_2sAALEmwAC3jrpSfP0yBfZNer5OgQ",
+        "file_id":      "BAACAgIAAxkDAAIGeWm9WD6JqMrw2IZVSeIKpGqUrf1cAAJtnAAC3jrpSbOmkiPQ19PZOgQ",
         "caption_kz":   "🎬 Қап! — Жаужүрек мың бала",
         "question_kz":  "«Жаужүрек мың бала» фильмінде күресте жеңіліс болған сәтте айтылған «Қап!» одағайы қандай сезімді білдіреді?",
         "options_kz":   ["А. Қуану, мақтану 😀", "Ә. Өкініш, қапалану 😔", "Б. Қорқу, абыржу 😱", "В. Қолдау, сүйсіну 🤲"],
