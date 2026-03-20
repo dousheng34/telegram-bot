@@ -43,7 +43,7 @@ VIDEOS = {
 
     # ───── 1. АЛАҚАЙ ─────
     "алақай": {
-        "file_id":      "BAACAgIAAxkDAAIF-mm9RG9jITJmCPpjGtK-yGpKcN4uAAJTmwAC3jrpSd-ccvGv0BJfOgQ",
+        "file_id":      "BAACAgIAAxkDAAIGGWm9SF894p-MnZutyR5ajjKv1LWsAAKKmwAC3jrpSdY18goAAfwB3DoE",
         "caption_kz":   "🎬 Жаужүрек мың бала",
         "question_kz":  "«Жаужүрек мың бала» фильміндегі «Алақай!» одағайы кейіпкердің қандай эмоциясын білдіреді?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңдану 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
@@ -54,7 +54,7 @@ VIDEOS = {
     "бәрекелді": [
         {
             "quiz_id":      "b0",
-            "file_id":      "BAACAgIAAxkDAAIF-2m9RHCklZYi_BMTwV2vHsfmQIb6AAJUmwAC3jrpSVdzsKp8g4ZbOgQ",
+            "file_id":      "BAACAgIAAxkDAAIGGmm9SJPgxzj7thuuPrmjL9SzT-4EAAKNmwAC3jrpSYmcfi3DT4RiOgQ",
             "caption_kz":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Ақсақалдың «Әй, бәрекелді!» одағайы қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Риза болу 😍", "Ә. Таңырқау 😲", "Б. Өкініш 😔", "В. Алаңдау 😨"],
@@ -62,7 +62,7 @@ VIDEOS = {
         },
         {
             "quiz_id":      "b1",
-            "file_id":      "BAACAgIAAxkDAAIF82m9Q89_c3ndxO86CbtmdcCrMKswAAJImwAC3jrpSZMj6EbXMjc9OgQ",
+            "file_id":      "BAACAgIAAxkDAAIGG2m9SLEIZFXDes6J31k9wu3ga00eAAKOmwAC3jrpSUe_pBU5Vdy8OgQ",
             "caption_kz":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Үлкендердің «Әй, бәрекелді!», «Әп-бәрекелді!» сөздері қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Мұң 😔", "Ә. Ашу 😡", "Б. Таңдану 😲", "В. Риза болу, қолдастау 🤲"],
