@@ -230,6 +230,18 @@ def send(cid, text, kb=None):
     except Exception as e:
         log.error(f"send(): {e}")
 
+def send_video(cid, file_id, caption):
+    try:
+        session.post(f"{BASE}/sendVideo", json={
+            "chat_id": cid,
+            "video": file_id,
+            "caption": caption,
+            "parse_mode": "HTML",
+            "supports_streaming": True,
+        }, timeout=20)
+    except Exception as e:
+        log.error(f"sendVideo: {e}")
+
 def edit(cid, mid, text, kb=None):
     d = {"chat_id": cid, "message_id": mid, "text": text, "parse_mode": "HTML"}
     if kb: d["reply_markup"] = kb
@@ -251,16 +263,7 @@ def send_video_quiz(cid, word):
         opts = vd.get(f"options_{lang}", vd.get("options_kz", []))
         fid = vd.get("file_id", "")
         if fid:
-            try:
-                session.post(f"{BASE}/sendVideo", json={
-                    "chat_id": cid,
-                    "video": fid,
-                    "caption": cap,
-                    "parse_mode": "HTML",
-                    "supports_streaming": True,
-                }, timeout=20)
-            except Exception as e:
-                log.error(f"sendVideo ({word}): {e}")
+            send_video(cid, fid, cap)
         send(cid, t(cid, "quiz_header", q=q), kb=quiz_kb(qid, opts))
         log.info(f"✅ {word} → {cid}")
 
