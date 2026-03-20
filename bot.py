@@ -84,7 +84,7 @@ VIDEOS = {
         },
         {
             "quiz_id":      "b1",
-            "file_id":      "BAACAgIAAxkDAAIFkmm9LcxOGoUf23CbOiPvAy40AcoYAAIlmgAC3jrpSWj4kzUG_RPVOgQ",
+            "file_id":      "BAACAgIAAxkDAAIFrWm9MbA_mHFUVknvLAue926hDc5kAAJbmgAC3jrpSbGjRuOiz0WyOgQ",
             "caption_kz":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
             "caption_ru":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Үлкендердің «Әй, бәрекелді!», «Әп-бәрекелді!» сөздері қандай көңіл күйді білдіреді?",
