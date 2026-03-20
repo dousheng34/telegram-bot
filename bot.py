@@ -43,7 +43,7 @@ VIDEOS = {
 
     # ───── 1. АЛАҚАЙ ─────
     "алақай": {
-        "file_id":      "BAACAgIAAxkDAAIFh2m9KLKFrD-UPiPoHe_s9-aPwVgvAALZmQAC3jrpSX9Vu3k6Xp1FOgQ",
+        "file_id":      "BAACAgIAAxkDAAIF-mm9RG9jITJmCPpjGtK-yGpKcN4uAAJTmwAC3jrpSd-ccvGv0BJfOgQ",
         "caption_kz":   "🎬 Жаужүрек мың бала",
         "question_kz":  "«Жаужүрек мың бала» фильміндегі «Алақай!» одағайы кейіпкердің қандай эмоциясын білдіреді?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңдану 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
