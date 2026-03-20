@@ -54,7 +54,7 @@ VIDEOS = {
     "бәрекелді": [
         {
             "quiz_id":      "b0",
-            "file_id":      "BAACAgIAAxkDAAIF8mm9Q86E6rYnyZVintUNV9lLb-HCAAJHmwAC3jrpScP-KpExwv5eOgQ",
+            "file_id":      "BAACAgIAAxkDAAIF-2m9RHCklZYi_BMTwV2vHsfmQIb6AAJUmwAC3jrpSVdzsKp8g4ZbOgQ",
             "caption_kz":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Ақсақалдың «Әй, бәрекелді!» одағайы қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Риза болу 😍", "Ә. Таңырқау 😲", "Б. Өкініш 😔", "В. Алаңдау 😨"],
@@ -74,7 +74,7 @@ VIDEOS = {
     "же": [
         {
             "quiz_id":      "je0",
-            "file_id":      "",
+            "file_id":      "BAACAgIAAxkDAAIF_Gm9RHEqR7dtgdtonXIV--6lrrJEAAJVmwAC3jrpSbORojg9vgnLOgQ",
             "caption_kz":   "🎬 1️⃣ Же-Же — Жаужүрек мың бала",
             "question_kz":  "«Же-же» одағайы қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Қуаныш 😀", "Ә. Кейіген ашу, зеку 😤", "Б. Мұң 😔", "В. Таңдану 😲"],
@@ -92,7 +92,7 @@ VIDEOS = {
 
     # ───── 4. ҚАП ─────
     "қап": {
-        "file_id":      "",
+        "file_id":      "BAACAgIAAxkDAAIF_2m9RHU1SCSoQ_eKbA0W3ipU7PFGAAJYmwAC3jrpSQVwqp18AAHbbzoE",
         "caption_kz":   "🎬 Қап! — Жаужүрек мың бала",
         "question_kz":  "Күресте жеңіліс болған сәтте айтылған «Қап!» одағайы қандай сезімді білдіреді?",
         "options_kz":   ["A. Қуану 😀", "Ә. Өкініш, қапалану 😔", "Б. Қорқу 😨", "В. Қолдау 🤲"],
@@ -103,7 +103,7 @@ VIDEOS = {
     "ойбай": [
         {
             "quiz_id":      "oybay0",
-            "file_id":      "",
+            "file_id":      "BAACAgIAAxkDAAIF_mm9RHS3nylcQFq-lB4KZ2E6zj9lAAJXmwAC3jrpSSpGbNyzIXhMOgQ",
             "caption_kz":   "🎬 1️⃣ Ойбай, жыланды қара! — Алдар косе",
             "question_kz":  "Сауданың «Ойбай, жыланды қара!» дейтіні қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Риза болу 😍", "Ә. Қуаныш 😀", "Б. Қорқу, абыржу 😱", "В. Өкініш 😔"],
@@ -130,7 +130,7 @@ VIDEOS = {
 
     # ───── 7. ӘЙ ─────
     "әй": {
-        "file_id":      "",
+        "file_id":      "BAACAgIAAxkDAAIGAAFpvUR30Rn0JMTH_KIoC_2NAkrhBgACWZsAAt466Ukz0GSeFaPdXjoE",
         "caption_kz":   "🎬 Әй, әй! — Алдар косе",
         "question_kz":  "Байдың «Әй, әй!» дейтіні қандай сезімді білдіреді?",
         "options_kz":   ["A. Мұң 😔", "Ә. Қуаныш 😀", "Б. Таңдану 😲", "В. Абдырау 😵"],
@@ -157,7 +157,7 @@ VIDEOS = {
 
     # ───── 10. МӘ ─────
     "мә": {
-        "file_id":      "",
+        "file_id":      "BAACAgIAAxkDAAIF_Wm9RHOkHMtUQ7VRhJrcP453Ak_mAAJWmwAC3jrpSQABU0pJGBxWJjoE",
         "caption_kz":   "🎬 Мә! — Жаужүрек мың бала",
         "question_kz":  "«Мә!» одағайы қандай сезімді білдіреді?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңқалу, таңырқау 😲", "Б. Мұң 😔", "В. Ашу 😡"],
