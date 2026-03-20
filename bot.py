@@ -54,7 +54,7 @@ VIDEOS = {
     "бәрекелді": [
         {
             "quiz_id":      "b0",
-            "file_id":      "BAACAgIAAxkDAAIF32m9QbY5xSDBXAd1nInvKn-sFPDgAAIrmwAC3jrpSaANMp4GuufVOgQ",
+            "file_id":      "BAACAgIAAxkDAAIF8mm9Q86E6rYnyZVintUNV9lLb-HCAAJHmwAC3jrpScP-KpExwv5eOgQ",
             "caption_kz":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Ақсақалдың «Әй, бәрекелді!» одағайы қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Риза болу 😍", "Ә. Таңырқау 😲", "Б. Өкініш 😔", "В. Алаңдау 😨"],
@@ -62,7 +62,7 @@ VIDEOS = {
         },
         {
             "quiz_id":      "b1",
-            "file_id":      "BAACAgIAAxkDAAIF4Gm9QcsILIbJARb9Gl3eCVzozzqXAAIumwAC3jrpSZ6ltbTEDeJgOgQ",
+            "file_id":      "BAACAgIAAxkDAAIF82m9Q89_c3ndxO86CbtmdcCrMKswAAJImwAC3jrpSZMj6EbXMjc9OgQ",
             "caption_kz":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Үлкендердің «Әй, бәрекелді!», «Әп-бәрекелді!» сөздері қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Мұң 😔", "Ә. Ашу 😡", "Б. Таңдану 😲", "В. Риза болу, қолдастау 🤲"],
