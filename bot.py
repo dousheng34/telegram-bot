@@ -349,9 +349,12 @@ def on_callback(cb):
                 c = vd["correct"]
                 opts = vd.get(f"options_{lang}", vd.get("options_kz", []))
                 if ans == c:
+                    # Дұрыс жауап - мәзірге қайту
                     edit(cid, mid, t(cid, "correct", ans=opts[c]), kb=back_kb(cid))
                 else:
-                    edit(cid, mid, t(cid, "wrong", user=opts[ans], correct=opts[c]), kb=back_kb(cid))
+                    # Қате жауап - сол тестке қайту
+                    q = vd.get(f"question_{lang}", vd.get("question_kz", ""))
+                    edit(cid, mid, t(cid, "wrong", user=opts[ans], correct=opts[c]), kb=quiz_kb(qid, opts))
         elif data == "menu":
             send(cid, t(cid, "welcome"), kb=main_kb(cid))
     except Exception as e:
