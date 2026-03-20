@@ -43,7 +43,7 @@ VIDEOS = {
 
     # ───── 1. АЛАҚАЙ ─────
     "алақай": {
-        "file_id":      "BAACAgIAAxkDAAIGGWm9SF894p-MnZutyR5ajjKv1LWsAAKKmwAC3jrpSdY18goAAfwB3DoE",
+        "file_id":      "BAACAgIAAxkDAAIGJGm9THCm0264BPWX6AV_kQGqAmzWAAK4mwAC3jrpSXxvFqoSPxkROgQ",
         "caption_kz":   "🎬 Жаужүрек мың бала",
         "question_kz":  "«Жаужүрек мың бала» фильміндегі «Алақай!» одағайы кейіпкердің қандай эмоциясын білдіреді?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңдану 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
@@ -54,7 +54,7 @@ VIDEOS = {
     "бәрекелді": [
         {
             "quiz_id":      "b0",
-            "file_id":      "BAACAgIAAxkDAAIGGmm9SJPgxzj7thuuPrmjL9SzT-4EAAKNmwAC3jrpSYmcfi3DT4RiOgQ",
+            "file_id":      "BAACAgIAAxkDAAIGJmm9TJQ2ourhcETiarcIrhOjF9DrAAK6mwAC3jrpST5bpjxdZdDFOgQ",
             "caption_kz":   "🎬 1️⃣ Әй, Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Ақсақалдың «Әй, бәрекелді!» одағайы қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Риза болу 😍", "Ә. Таңырқау 😲", "Б. Өкініш 😔", "В. Алаңдау 😨"],
@@ -62,7 +62,7 @@ VIDEOS = {
         },
         {
             "quiz_id":      "b1",
-            "file_id":      "BAACAgIAAxkDAAIGG2m9SLEIZFXDes6J31k9wu3ga00eAAKOmwAC3jrpSUe_pBU5Vdy8OgQ",
+            "file_id":      "BAACAgIAAxkDAAIGJmm9TJQ2ourhcETiarcIrhOjF9DrAAK6mwAC3jrpST5bpjxdZdDFOgQ",
             "caption_kz":   "🎬 2️⃣ Жүртшылықтың Бәрекелді! — Жаужүрек мың бала",
             "question_kz":  "Үлкендердің «Әй, бәрекелді!», «Әп-бәрекелді!» сөздері қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Мұң 😔", "Ә. Ашу 😡", "Б. Таңдану 😲", "В. Риза болу, қолдастау 🤲"],
@@ -74,7 +74,7 @@ VIDEOS = {
     "же": [
         {
             "quiz_id":      "je0",
-            "file_id":      "BAACAgIAAxkDAAIF_Gm9RHEqR7dtgdtonXIV--6lrrJEAAJVmwAC3jrpSbORojg9vgnLOgQ",
+            "file_id":      "BAACAgIAAxkDAAIGKGm9TKhP3RCnMMxmJNkgM4PwQjxYAAK9mwAC3jrpSZMTS1nlUUIUOgQ",
             "caption_kz":   "🎬 1️⃣ Же-Же — Жаужүрек мың бала",
             "question_kz":  "«Же-же» одағайы қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Қуаныш 😀", "Ә. Кейіген ашу, зеку 😤", "Б. Мұң 😔", "В. Таңдану 😲"],
@@ -92,7 +92,7 @@ VIDEOS = {
 
     # ───── 4. ҚАП ─────
     "қап": {
-        "file_id":      "BAACAgIAAxkDAAIF_2m9RHU1SCSoQ_eKbA0W3ipU7PFGAAJYmwAC3jrpSQVwqp18AAHbbzoE",
+        "file_id":      "BAACAgIAAxkDAAIGLGm9TMcx1Jmy-rXIQviPogN1M_2sAALEmwAC3jrpSfP0yBfZNer5OgQ",
         "caption_kz":   "🎬 Қап! — Жаужүрек мың бала",
         "question_kz":  "Күресте жеңіліс болған сәтте айтылған «Қап!» одағайы қандай сезімді білдіреді?",
         "options_kz":   ["A. Қуану 😀", "Ә. Өкініш, қапалану 😔", "Б. Қорқу 😨", "В. Қолдау 🤲"],
@@ -103,7 +103,7 @@ VIDEOS = {
     "ойбай": [
         {
             "quiz_id":      "oybay0",
-            "file_id":      "BAACAgIAAxkDAAIF_mm9RHS3nylcQFq-lB4KZ2E6zj9lAAJXmwAC3jrpSSpGbNyzIXhMOgQ",
+            "file_id":      "BAACAgIAAxkDAAIGLmm9TNwjOGpTssENWhM5oGtk9kp9AALHmwAC3jrpSbkwfXRVufWKOgQ",
             "caption_kz":   "🎬 1️⃣ Ойбай, жыланды қара! — Алдар косе",
             "question_kz":  "Сауданың «Ойбай, жыланды қара!» дейтіні қандай көңіл күйді білдіреді?",
             "options_kz":   ["A. Риза болу 😍", "Ә. Қуаныш 😀", "Б. Қорқу, абыржу 😱", "В. Өкініш 😔"],
@@ -121,7 +121,7 @@ VIDEOS = {
 
     # ───── 6. ЯПЫР-АЙ ─────
     "япыр-ай": {
-        "file_id":      "",
+        "file_id":      "BAACAgIAAxkDAAIGMmm9TRHRWnd21fnJDA2D1heVci6DAALUmwAC3jrpSXru0Js4AZL6OgQ",
         "caption_kz":   "🎬 Япыр-ай! — Алдар косе",
         "question_kz":  "«Япыр-ай!» одағайы қандай сезімді білдіреді?",
         "options_kz":   ["A. Мұң 😔", "Ә. Қуаныш 😀", "Б. Таңдану, қызығу 😲", "В. Ашу 😡"],
@@ -130,7 +130,7 @@ VIDEOS = {
 
     # ───── 7. ӘЙ ─────
     "әй": {
-        "file_id":      "BAACAgIAAxkDAAIGAAFpvUR30Rn0JMTH_KIoC_2NAkrhBgACWZsAAt466Ukz0GSeFaPdXjoE",
+        "file_id":      "BAACAgIAAxkDAAIGM2m9TS5FrkzUc9MrkFbjWuqkev5yAALYmwAC3jrpSWGyAZFbcOlOOgQ",
         "caption_kz":   "🎬 Әй, әй! — Алдар косе",
         "question_kz":  "Байдың «Әй, әй!» дейтіні қандай сезімді білдіреді?",
         "options_kz":   ["A. Мұң 😔", "Ә. Қуаныш 😀", "Б. Таңдану 😲", "В. Абдырау 😵"],
@@ -139,7 +139,7 @@ VIDEOS = {
 
     # ───── 8. ӘТТЕГЕН-АЙ ─────
     "әттеген-ай": {
-        "file_id":      "",
+        "file_id":      "BAACAgIAAxkDAAIGNGm9TTovVnODf4SUZAABFwE84gHqhAAC2psAAt466Um6R9NGG2L_HToE",
         "caption_kz":   "🎬 Әттеген-ай! — Жаужүрек мың бала",
         "question_kz":  "Ақсақалдың «Әттеген-ай!» одағайы қандай көңіл күйді білдіреді?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңқалу 😲", "Б. Өкініш, налу 😔", "В. Қорқыныш 😨"],
@@ -148,7 +148,7 @@ VIDEOS = {
 
     # ───── 9. ҚҰДАЙЫМ-АУ ─────
     "құдайым-ау": {
-        "file_id":      "",
+        "file_id":      "BAACAgIAAxkDAAIGMWm9TP7k9zaHgvyfkqMEwQ_v6oCiAALSmwAC3jrpSbUyJzxi9ddWOgQ",
         "caption_kz":   "🎬 Құдайым-ау! — Жаужүрек мың бала",
         "question_kz":  "«Құдайым-ау!» одағайы қандай көңіл күйді білдіреді?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңқалу 😲", "Б. Қайғы, шошу 😱", "В. Риза болу 😍"],
@@ -157,7 +157,7 @@ VIDEOS = {
 
     # ───── 10. МӘ ─────
     "мә": {
-        "file_id":      "BAACAgIAAxkDAAIF_Wm9RHOkHMtUQ7VRhJrcP453Ak_mAAJWmwAC3jrpSQABU0pJGBxWJjoE",
+        "file_id":      "BAACAgIAAxkDAAIGNWm9TUHBhblPZXXaqVUU1M_sEkfEAALcmwAC3jrpSctO59Kfr6bPOgQ",
         "caption_kz":   "🎬 Мә! — Жаужүрек мың бала",
         "question_kz":  "«Мә!» одағайы қандай сезімді білдіреді?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңқалу, таңырқау 😲", "Б. Мұң 😔", "В. Ашу 😡"],
