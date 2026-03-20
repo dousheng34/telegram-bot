@@ -335,7 +335,7 @@ def on_message(msg):
     text = msg.get("text", "").strip()
     if not cid or not text: return
 
-    clean = re.sub(r"^[𐀀-􏿿☀-⟿🌀-🧿]\s*", "", text).strip()
+    clean = re.sub(r"^[\U0001F000-\U0001FFFF\u2600-\u27FF\U00010000-\U0010FFFF]\s*", "", text).strip()
     if not clean: clean = text
 
     nav = {
