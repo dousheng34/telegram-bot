@@ -143,7 +143,7 @@ VIDEOS = {
     "әттеген-ай": [
         {
             "quiz_id": "et0",
-            "file_id": "BAACAgIAAxkBAAIH_2m9ku-2U9dBRXS7v8whtDibu2qRAAJXlgAC3jrxSReqXSLGNPJ2OgQ",
+            "file_id": "BAACAgIAAxkBAAIIEGm9lTF2qNfiXVXVfO57PGBhElBOAAJtlgAC3jrxSRtQklrA74d5OgQ",
             "caption_kz": "🎬 1️⃣ Ақсақалдың «Әттеген-ай!» — Жаужүрек мың бала",
             "question_kz": "«Жаужүрек мың бала» фильміндегі Ақсақалдың «Әттеген-ай!» одағайы қандай көңіл күйді білдіреді?",
             "options_kz": ["А. Қуаныш 😀", "Ә. Таңқалу 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
