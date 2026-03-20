@@ -140,13 +140,24 @@ VIDEOS = {
         "options_kz": ["А. Мұң 😔", "Ә. Қуаныш 😀", "Б. Таңдану 😲", "В. Абдырау 😱"],
         "correct": 3,
     },
-    "әттеген-ай": {
-        "file_id": "BAACAgIAAxkBAAIHV2m9e0wsHBE7Av2gItV2UzWibcvRAAKyngAC3jrpSQe2hoimhVbtOgQ",
-        "caption_kz": "🎬 Әттеген-ай! — Алдар көсе",
-        "question_kz": "«Алдар көсе» телехикаясындағы байдың «Әттеген-ай!» одағайы қандай сезімді білдіреді?",
-        "options_kz": ["А. Риза болу, қолпаштау 🤲", "Ә. Өкініш, мұңаю 😔", "Б. Ашу, кейіс 😡", "В. Таңдану, абыржу 😲"],
-        "correct": 2,
-    },
+    "әттеген-ай": [
+        {
+            "quiz_id": "et0",
+            "file_id": "BAACAgIAAxkBAAIH_2m9ku-2U9dBRXS7v8whtDibu2qRAAJXlgAC3jrxSReqXSLGNPJ2OgQ",
+            "caption_kz": "🎬 1️⃣ Ақсақалдың «Әттеген-ай!» — Жаужүрек мың бала",
+            "question_kz": "«Жаужүрек мың бала» фильміндегі Ақсақалдың «Әттеген-ай!» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Қуаныш 😀", "Ә. Таңқалу 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
+            "correct": 2,
+        },
+        {
+            "quiz_id": "et1",
+            "file_id": "BAACAgIAAxkBAAIH_2m9ku-2U9dBRXS7v8whtDibu2qRAAJXlgAC3jrxSReqXSLGNPJ2OgQ",
+            "caption_kz": "🎬 2️⃣ Байдың «Әттеген-ай!» — Алдар көсе",
+            "question_kz": "«Алдар көсе» телехикаясында байдың «Әттеген-ай!» одағайы қандай сезімді білдіреді?",
+            "options_kz": ["А. Риза болу, қолпаштау 🤲", "Ә. Өкініш, мұңаю 😔", "Б. Ашу, кейіс 😡", "В. Таңдану, абыржу 😲"],
+            "correct": 2,
+        },
+    ],
     "құдайым-ау": {
         "file_id": "BAACAgIAAxkBAAIHW2m9e-YHX5THDxrJHJ_4jA2IrDZnAAK7ngAC3jrpSZHUQU6q5lNQOgQ",
         "caption_kz": "🎬 Құдайым-ау! — Көшпенділер",
