@@ -15,7 +15,6 @@ logging.basicConfig(format="%(asctime)s | %(message)s", level=logging.INFO, date
 log = logging.getLogger(__name__)
 session = requests.Session()
 
-# FILE_ID ЛОГЫ
 FILE_ID_LOG = "file_ids.json"
 
 def save_file_id(name, file_id):
@@ -23,25 +22,25 @@ def save_file_id(name, file_id):
     try:
         data = {}
         if os.path.exists(FILE_ID_LOG):
-            with open(FILE_ID_LOG, "r") as f:
+            with open(FILE_ID_LOG, "r", encoding="utf-8") as f:
                 data = json.load(f)
         
         data[name] = file_id
         
-        with open(FILE_ID_LOG, "w") as f:
+        with open(FILE_ID_LOG, "w", encoding="utf-8") as f:
             json.dump(data, f, indent=2, ensure_ascii=False)
         
-        log.info(f"✅ FILE_ID САҚТАЛДЫ: {name} = {file_id}")
+        log.info(f"✅ FILE_ID САҚТАЛДЫ: {name}")
+        return True
     except Exception as e:
         log.error(f"FILE_ID сақтау қатесі: {e}")
+        return False
 
-# тіл тек қазақша (kz only)
-# ==================== ТІЛДЕР ====================
 TEXTS = {
     "kz": {
         "welcome": "🎬 <b>Қош келдіңіз!</b>\n\nОдақтарды таңдаңыз:",
         "list_title": "📋 <b>Одақтар ({n}):</b>\n\n{items}",
-        "help_text": "❓ <b>Қолдау</b>\n\n👤 Админ: @aseka0303",
+        "help_text": "❓ <b>Қолдау</b>\n\n👤 Админ: @aseka0303\n\n💡 <b>Видео жіберу:</b>\nВидео + Caption-та одақ атауын жазыңыз (мысалы: алақай)",
         "not_found": "🤔 <b>«{w}»</b> тізімде жоқ.\n/list — барлық одақтар",
         "quiz_header": "❓ <b>Тест сұрағы:</b>\n\n{q}\n\n👇 <b>Жауапты таңдаңыз:</b>",
         "correct": "✅ <b>Дұрыс! Керемет!</b>\n\n{ans}",
@@ -49,6 +48,7 @@ TEXTS = {
         "btn_list": "📋 Тізім",
         "btn_help": "❓ Қолдау",
         "btn_menu": "🔙 Мәзір",
+        "video_saved": "✅ <b>FILE_ID САҚТАЛДЫ!</b>\n\n📝 Атауы: <code>{name}</code>\n\n🔑 FILE_ID:\n<code>{file_id}</code>",
     }
 }
 
@@ -57,7 +57,6 @@ def t(uid, key, **kw):
     tmpl = TEXTS[lang].get(key, key)
     return tmpl.format(**kw) if kw else tmpl
 
-# ==================== ВИДЕО + ТЕСТ ДЕРЕКҚОРЫ ====================
 VIDEOS = {
     "алақай": {
         "file_id": "",
@@ -164,13 +163,11 @@ VIDEOS = {
     },
 }
 
-# ==================== HEALTH CHECK ====================
 class Health(BaseHTTPRequestHandler):
     def do_GET(self):
         self.send_response(200); self.end_headers(); self.wfile.write(b"OK")
     def log_message(self, *a): pass
 
-# ==================== УТИЛИТТЕР ====================
 def self_ping():
     if not APP_URL: return
     while True:
@@ -183,20 +180,15 @@ def self_ping():
 def set_bot_commands():
     if not TOKEN: return
     cmds = [
-        {"command": "start", "description": "🎬 Басты мәзір / Главное меню"},
-        {"command": "list", "description": "📋 Одақтар тізімі / Список союзов"},
-        {"command": "lang", "description": "🌐 Тіл өзгерту / Сменить язык"},
-        {"command": "help", "description": "❓ Қолдау / Помощь"},
+        {"command": "start", "description": "🎬 Басты мәзір"},
+        {"command": "list", "description": "📋 Одақтар тізімі"},
+        {"command": "help", "description": "❓ Қолдау"},
     ]
     try:
         session.post(f"{BASE}/setMyCommands", json={"commands": cmds}, timeout=10)
         log.info("✅ Bot commands орнатылды!")
     except Exception as e:
         log.error(f"set_bot_commands: {e}")
-
-# ==================== КЛАВИАТУРАЛАР ====================
-def lang_kb():
-    return {"inline_keyboard": [[{"text": "🇰🇿 Қазақша", "callback_data": "lang_kz"}]]}
 
 def main_kb(uid):
     rows = []
@@ -223,7 +215,6 @@ def quiz_kb(qid, opts):
         [{"text": opts[3], "callback_data": f"q|{qid}|3"}],
     ]}
 
-# ==================== TELEGRAM ====================
 def send(cid, text, kb=None):
     d = {"chat_id": cid, "text": text, "parse_mode": "HTML"}
     if kb: d["reply_markup"] = kb
@@ -264,7 +255,7 @@ def send_video_quiz(cid, word):
             except Exception as e:
                 log.error(f"sendVideo ({word}): {e}")
         send(cid, t(cid, "quiz_header", q=q), kb=quiz_kb(qid, opts))
-        log.info(f"✅ {word} → {cid} [{lang}]")
+        log.info(f"✅ {word} → {cid}")
 
 def get_quiz(qid):
     for w, d in VIDEOS.items():
@@ -273,10 +264,8 @@ def get_quiz(qid):
                 return vd
     return None
 
-# ==================== ХАБАРЛАМА ӨҢДЕУ ====================
 def on_message(msg):
     cid = msg.get("chat", {}).get("id")
-    text = msg.get("text", "").strip()
     
     # ВИДЕО ҚАБЫЛДАУ
     if "video" in msg:
@@ -284,11 +273,13 @@ def on_message(msg):
         file_id = video.get("file_id", "")
         file_name = msg.get("caption", "video").lower().strip()
         
-        if file_id:
+        if file_id and file_name:
             save_file_id(file_name, file_id)
-            send(cid, f"✅ FILE_ID САҚТАЛДЫ!\n\n📝 Атауы: <code>{file_name}</code>\n\n🔑 FILE_ID:\n<code>{file_id}</code>")
+            send(cid, t(cid, "video_saved", name=file_name, file_id=file_id))
+            log.info(f"📹 Видео қабылданды: {file_name}")
             return
     
+    text = msg.get("text", "").strip()
     if not cid or not text: return
     
     clean = re.sub(r"^[\U0001F000-\U0001FFFF\u2600-\u27FF\U00010000-\U0010FFFF]\s*", "", text).strip()
@@ -296,11 +287,7 @@ def on_message(msg):
     
     nav = {
         "📋 Тізім": "/list",
-        "📋 Список": "/list",
         "❓ Қолдау": "/help",
-        "❓ Помощь": "/help",
-        "🌐 Тіл": "/lang",
-        "🌐 Язык": "/lang",
     }
     if clean in nav: clean = nav[clean]
     
@@ -370,7 +357,6 @@ def process(u):
     except Exception as e:
         log.error(f"process(): {e}")
 
-# ==================== MAIN ====================
 def main():
     threading.Thread(
         target=lambda: HTTPServer(("0.0.0.0", PORT), Health).serve_forever(),
@@ -381,9 +367,9 @@ def main():
     log.info(f"🚀 Bot started! PORT:{PORT}")
     if not TOKEN:
         log.error("❌ BOT_TOKEN жоқ!")
-    while True:
-        time.sleep(60)
-        set_bot_commands()
+        return
+    
+    set_bot_commands()
     offset, delay = None, 1
     with ThreadPoolExecutor(max_workers=10) as pool:
         while True:
