@@ -43,7 +43,7 @@ VIDEOS = {
 
     # ───── 1. АЛАҚАЙ ─────
     "алақай": {
-        "file_id":      "BAACAgIAAxkDAAIGJGm9THCm0264BPWX6AV_kQGqAmzWAAK4mwAC3jrpSXxvFqoSPxkROgQ",
+        "file_id":      "BAACAgIAAxkDAAIFh2m9KLKFrD-UPiPoHe_s9-aPwVgvAALZmQAC3jrpSX9Vu3k6Xp1FOgQ",
         "caption_kz":   "🎬 Алақай! — Жаужүрек мың бала",
         "question_kz":  "«Жаужүрек мың бала» фильмінде қолданылған «Алақай!» одағайы кейіпкердің қандай эмоциясын білдіреді?",
         "options_kz":   ["A. Қуаныш 😀", "Ә. Таңдану 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
@@ -70,8 +70,8 @@ VIDEOS = {
         },
     ],
 
-    # ───── 3. ЖЕ ─────
-    "же": [
+    # ───── 3. ЖӘ-ЖӘ ─────
+    "жә-жә": [
         {
             "quiz_id":      "je0",
             "file_id":      "BAACAgIAAxkDAAIGKGm9TKhP3RCnMMxmJNkgM4PwQjxYAAK9mwAC3jrpSZMTS1nlUUIUOgQ",
