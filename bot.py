@@ -259,7 +259,7 @@ VIDEOS = {
     },
     "құдай-ау": {
         "file_id": "BAACAgIAAxkBAAIHWWm9e3mK_8Poah2nrltrU6atPJRUAAK2ngAC3jrpSR5ZKDatWkbNOgQ",
-        "caption_kz": "🎬 Құдай-ау!» — Жаужүрек мың бала",
+        "caption_kz": "🎬 «Құдай-ау!» — Жаужүрек мың бала",
         "question_kz": "«Жаужүрек мың бала» фильміндегі «Құдай-ау!» одағайы қандай көңіл күйді білдіреді?",
         "options_kz": ["А. Қуаныш 😀", "Ә. Таңқалу 😲", "Б. Қайғы, шошу 😔", "В. Риза болу 🤲"],
         "correct": 2,
