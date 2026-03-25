@@ -215,6 +215,14 @@ VIDEOS = {
             "options_kz": ["А. Қуаныш, сүйсіну 😀", "Ә. Таңдану, қызығу 😲", "Б. Жеңіл өкініш, қынжылу 😔", "В. Қорқу, сескену 😨"],
             "correct": 2,
         },
+        {
+            "quiz_id": "et3",
+            "file_id": "BAACAgIAAxkBAAIJMWnEYyooHKuZ3ieXMc9C1xV0wyVoAAIYkgAEIUpriA3VlsFvvjoE",
+            "caption_kz": "🎬 4️⃣ — «Қап, әттеген-ай!» — Ер Төстік",
+            "question_kz": "«Ер Төстік» мультфильміндегі «Қап, әттеген-ай!» одағайлары қандай сезімді білдіреді?",
+            "options_kz": ["А. Қорқу, сескену 😨", "Ә. Қуаныш, мақтаныш 😀", "Б. Өкініш, ыза 😤", "В. Таңқалу, абыржу 😲"],
+            "correct": 2,
+        },
     ],
     "құдайым-ау": {
         "file_id": "BAACAgIAAxkBAAIHW2m9e-YHX5THDxrJHJ_4jA2IrDZnAAK7ngAC3jrpSZHUQU6q5lNQOgQ",
