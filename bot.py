@@ -145,7 +145,7 @@ VIDEOS = {
         },
         {
             "quiz_id": "oybay2",
-            "file_id": "",
+            "file_id": "BAACAgIAAxkBAAII9GnEVMCCJ7x7grS9CESdI7pbTjMsAALmkQAEIUpa_BLZNXoluzoE",
             "caption_kz": "🎬 3️⃣ «Ойбай-ай!» — Менің атым Қожа",
             "question_kz": "«Менің атым Қожа» фильміндегі «Ойбай-ай!» одағайы қандай көңіл күйді білдіреді?",
             "options_kz": ["А. Қуаныш, сүйсіну 😀", "Ә. Ауыру, қиналу 😣", "Б. Абыржу, қорқу 😱", "В. Риза болу, қолпаштау 🤲"],
