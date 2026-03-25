@@ -76,13 +76,32 @@ def t(key: str, **kw) -> str:
 # ВИДЕО + ТЕСТТЕР
 # ──────────────────────────────────
 VIDEOS = {
-    "алақай": {
-        "file_id": "BAACAgIAAxkBAAIHOWm9cBpCjFB6WQ8uUxVxbHR5Qhe3AALBnQAC3jrpSRE6u0kgxgKWOgQ",
-        "caption_kz": "🎬 «Алақай!» — Жаужүрек мың бала",
-        "question_kz": "«Жаужүрек мың бала» фильмінде қолданылған «Алақай!» одағайы кейіпкердің қандай эмоциясын білдіреді?",
-        "options_kz": ["A. Қуаныш 😀", "Ә. Таңдану 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
-        "correct": 0,
-    },
+    "алақай": [
+        {
+            "quiz_id": "alk0",
+            "file_id": "BAACAgIAAxkBAAIHOWm9cBpCjFB6WQ8uUxVxbHR5Qhe3AALBnQAC3jrpSRE6u0kgxgKWOgQ",
+            "caption_kz": "🎬 1️⃣ «Алақай!» — Жаужүрек мың бала",
+            "question_kz": "«Жаужүрек мың бала» фильмінде қолданылған «Алақай!» одағайы кейіпкердің қандай эмоциясын білдіреді?",
+            "options_kz": ["A. Қуаныш 😀", "Ә. Таңдану 😲", "Б. Өкініш 😔", "В. Қорқыныш 😨"],
+            "correct": 0,
+        },
+        {
+            "quiz_id": "alk1",
+            "file_id": "BAACAgIAAxkBAAIJWWnEabjqcMiXmWpkyQ5HAAGKF-OoBAACPZIABCFKSuLM0O_-s6A6BA",
+            "caption_kz": "🎬 2️⃣ «Алақай!» — Ер Төстік",
+            "question_kz": "«Ер Төстік» мультфильміндегі «Алақай!» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Қуаныш, шаттану 😀", "Ә. Қорқу, сескену 😨", "Б. Өкініш, қапа 😔", "В. Таңдану, абыржу 😲"],
+            "correct": 0,
+        },
+        {
+            "quiz_id": "alk2",
+            "file_id": "BAACAgIAAxkBAAIJW2nEafNDDnfylCDvQKm2zp8PruuwAAI-kgAEIUp8TBiAy2KhcjoE",
+            "caption_kz": "🎬 3️⃣ «Алақай!» — Болмаған балалық шақ",
+            "question_kz": "«Болмаған балалық шақ» фильміндегі «Алақай!» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Өкініш 😔", "Ә. Қорқыныш 😨", "Б. Шаттық 😀", "В. Таңқалу 😲"],
+            "correct": 2,
+        },
+    ],
     "бәрекелді": [
         {
             "quiz_id": "b0",
