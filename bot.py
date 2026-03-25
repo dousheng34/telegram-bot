@@ -207,6 +207,14 @@ VIDEOS = {
             "options_kz": ["А. Риза болу, қолпаштау 🤲", "Ә. Өкініш, мұңаю 😔", "Б. Ашу, кейіс 😡", "В. Таңдану, абыржу 😲"],
             "correct": 2,
         },
+        {
+            "quiz_id": "et2",
+            "file_id": "BAACAgIAAxkBAAIJL2nEYmjK2vaVw716D3EvA2asxJUOAAIWkgAEIUrUjX7gcsHlMToE",
+            "caption_kz": "🎬 3️⃣ — «Әттеген-ай!» — Менің атым Қожа",
+            "question_kz": "«Менің атым Қожа» фильміндегі «Әттеген-ай!» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Қуаныш, сүйсіну 😀", "Ә. Таңдану, қызығу 😲", "Б. Жеңіл өкініш, қынжылу 😔", "В. Қорқу, сескену 😨"],
+            "correct": 2,
+        },
     ],
     "құдайым-ау": {
         "file_id": "BAACAgIAAxkBAAIHW2m9e-YHX5THDxrJHJ_4jA2IrDZnAAK7ngAC3jrpSZHUQU6q5lNQOgQ",
