@@ -441,12 +441,19 @@ async def self_ping():
 # ──────────────────────────────────
 async def set_bot_commands():
     from aiogram.types import BotCommand
-    await bot.set_my_commands([
-        BotCommand(command="start", description="🎬 Басты мәзір"),
-        BotCommand(command="list", description="📋 Одақтар тізімі"),
-        BotCommand(command="help", description="❓ Қолдау"),
-    ])
-    log.info("✅ Bot commands орнатылды!")
+    for attempt in range(5):
+        try:
+            await bot.set_my_commands([
+                BotCommand(command="start", description="🎬 Басты мәзір"),
+                BotCommand(command="list", description="📋 Одақтар тізімі"),
+                BotCommand(command="help", description="❓ Қолдау"),
+            ])
+            log.info("✅ Bot commands орнатылды!")
+            return
+        except Exception as e:
+            log.warning(f"set_bot_commands attempt {attempt+1} failed: {e}")
+            await asyncio.sleep(5)
+    log.error("❌ set_bot_commands: барлық әрекет сәтсіз аяқталды")
 
 # ──────────────────────────────────
 # MAIN
@@ -459,8 +466,9 @@ async def main():
     log.info(f"🚀 Bot started! PORT:{PORT}")
 
     await run_health_server()
-    await set_bot_commands()
 
+    # Background tasks — бот бұлар болмаса да жұмыс істейді
+    asyncio.create_task(set_bot_commands())
     if APP_URL:
         asyncio.create_task(self_ping())
 
