@@ -252,13 +252,32 @@ VIDEOS = {
         "options_kz": ["А. Таңдану 😲", "Ә. Қуаныш 😀", "Б. Өкініш 😔", "В. Қорқу 😨"],
         "correct": 1,
     },
-    "шіркін": {
-        "file_id": "BAACAgIAAxkBAAIJT2nEZqaTIaLMrVWjB6fH5nb6LysBAAIpkgAEIUpS35mlMF_USToE",
-        "caption_kz": "🎬 «Шіркін-ай!» — Менің атым Қожа",
-        "question_kz": "«Менің атым Қожа» фільміндегі «Шіркін-ай!» одағайы қандай сезімді білдіреді?",
-        "options_kz": ["А. Аңсау 🥺", "Ә. Қуаныш 😀", "Б. Қайғы 😔", "В. Таңқалу 😲"],
-        "correct": 0,
-    },
+    "шіркін": [
+        {
+            "quiz_id": "sh0",
+            "file_id": "BAACAgIAAxkBAAIJT2nEZqaTIaLMrVWjB6fH5nb6LysBAAIpkgAEIUpS35mlMF_USToE",
+            "caption_kz": "🎬 1️⃣ «Шіркін-ай!» — Менің атым Қожа",
+            "question_kz": "«Менің атым Қожа» фільміндегі «Шіркін-ай!» одағайы қандай сезімді білдіреді?",
+            "options_kz": ["А. Аңсау 🥺", "Ә. Қуаныш 😀", "Б. Қайғы 😔", "В. Таңқалу 😲"],
+            "correct": 0,
+        },
+        {
+            "quiz_id": "sh1",
+            "file_id": "BAACAgIAAxkBAAIJUWnEZ53XMsovwkQlqPppnmt350iZAAIrkgAEIUofd4YpIRA8QDoE",
+            "caption_kz": "🎬 2️⃣ «Шіркін!» — Ер Төстік",
+            "question_kz": "«Ер Төстік» мультфильміндегі «Шіркін!» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Таңдану, қызығу 😲", "Ә. Риза болу, сүйсіну 😍", "Б. Қорқу, сескену 😨", "В. Өкініш, қапа 😔"],
+            "correct": 1,
+        },
+        {
+            "quiz_id": "sh2",
+            "file_id": "BAACAgIAAxkBAAIJU2nEZ8bHsI-PwqoK8of_eFOuoEUvAAIskgAEIUr0Zikc65oxGjoE",
+            "caption_kz": "🎬 3️⃣ «Шіркін» — Көксерек",
+            "question_kz": "«Көксерек» фильміндегі «Шіркін» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Қуаныш, сүйсіну 😀", "Ә. Сескену, қауіптену 😨", "Б. Таңдану, қызығу 😲", "В. Өкініш, қапа 😔"],
+            "correct": 1,
+        },
+    ],
 }
 
 # ──────────────────────────────────
