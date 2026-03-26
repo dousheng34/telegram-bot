@@ -330,13 +330,24 @@ VIDEOS = {
         "options_kz": ["А. Ыза, реніш 😡", "Ә. Қуаныш, шаттық 😀", "Б. Таңқалу, қызығу 😲", "В. Қорқу, сескену 😨"],
         "correct": 0,
     },
-    "оой": {
-        "file_id": "BAACAgIAAxkBAAIJ_2nEwd3UWzJF51oAAXLu-89zh01qFgACdYwABClKDwNiEQ2rTgo6BA",
-        "caption_kz": "🎬 «Ой!» — Менің атым Қожа",
-        "question_kz": "«Менің атым Қожа» фильміндегі «Ой!» одағайы қандай көңіл күйді білдіреді?",
-        "options_kz": ["А. Қуаныш, шаттық 😀", "Ә. Таңқалу, қызығу 😲", "Б. Ауыру, тітіркену 😣", "В. Қорқу, сескену 😨"],
-        "correct": 2,
-    },
+    "оой": [
+        {
+            "quiz_id": "ooy0",
+            "file_id": "BAACAgIAAxkBAAIJ_2nEwd3UWzJF51oAAXLu-89zh01qFgACdYwABClKDwNiEQ2rTgo6BA",
+            "caption_kz": "🎬 1️⃣ «Ой!» — Менің атым Қожа",
+            "question_kz": "«Менің атым Қожа» фильміндегі «Ой!» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Қуаныш, шаттық 😀", "Ә. Таңқалу, қызығу 😲", "Б. Ауыру, тітіркену 😣", "В. Қорқу, сескену 😨"],
+            "correct": 2,
+        },
+        {
+            "quiz_id": "ooy1",
+            "file_id": "BAACAgIAAxkBAAIKBWnEw651-zxF5c0LbbtMUlw155bdAAKEjAAEKUp33-Az5-llVToE",
+            "caption_kz": "🎬 2️⃣ «Ой!» — Менің атым Қожа",
+            "question_kz": "«Менің атым Қожа» фильміндегі «Ой!» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Қуаныш, шаттық 😀", "Ә. Таңқалу, қызығу 😲", "Б. Қорқу, шошу 😱", "В. Риза болу, сүйсіну 😍"],
+            "correct": 2,
+        },
+    ],
     "мәссаған": {
         "file_id": "BAACAgIAAxkBAAIKA2nEww9ZHByBFFy8IJy26x3LezCIAAKAjAAEKUpN3KN0q_bGXToE",
         "caption_kz": "🎬 «Мәссаған!» — Менің атым Қожа",
