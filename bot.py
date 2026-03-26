@@ -138,13 +138,24 @@ VIDEOS = {
             "correct": 0,
         },
     ],
-    "қап": {
-        "file_id": "BAACAgIAAxkBAAIHTWm9c12lrBMi5YtdhohDYWV15V-JAAL9nQAC3jrpSV2Ohyf9pBuYOgQ",
-        "caption_kz": "🎬 «Қап!» — Жаужүрек мың бала",
-        "question_kz": "«Жаужүрек мың бала» фильмінде күресте жеңіліс болған сәтте айтылған «Қап!» одағайы қандай сезімді білдіреді?",
-        "options_kz": ["А. Қуану, мақтану 😀", "Ә. Өкініш, қапалану 😔", "Б. Қорқу, абыржу 😱", "В. Қолдау, сүйсіну 🤲"],
-        "correct": 1,
-    },
+    "қап": [
+        {
+            "quiz_id": "qap0",
+            "file_id": "BAACAgIAAxkBAAIHTWm9c12lrBMi5YtdhohDYWV15V-JAAL9nQAC3jrpSV2Ohyf9pBuYOgQ",
+            "caption_kz": "🎬 1️⃣ «Қап!» — Жаужүрек мың бала",
+            "question_kz": "«Жаужүрек мың бала» фильмінде күресте жеңіліс болған сәтте айтылған «Қап!» одағайы қандай сезімді білдіреді?",
+            "options_kz": ["А. Қуану, мақтану 😀", "Ә. Өкініш, қапалану 😔", "Б. Қорқу, абыржу 😱", "В. Қолдау, сүйсіну 🤲"],
+            "correct": 1,
+        },
+        {
+            "quiz_id": "qap1",
+            "file_id": "BAACAgIAAxkBAAIKFGnExc58Rd1WLcuuip8mlGlf6dkmAAKZjAAEKUoppcg_fPsAAfk6BA",
+            "caption_kz": "🎬 2️⃣ «Қап!» — Көксерек",
+            "question_kz": "«Көксерек» фільміндегі «Қап!» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Қуаныш, сүйсіну 😀", "Ә. Таңқалу, қызығу 😲", "Б. Күрсіну, қапалану 😔", "В. Қорқу, сескену 😨"],
+            "correct": 2,
+        },
+    ],
     "ойбай": [
         {
             "quiz_id": "oybay0",
