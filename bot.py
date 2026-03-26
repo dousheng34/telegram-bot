@@ -61,7 +61,8 @@ TEXTS = {
     "not_found": "🤔 <b>«{w}»</b> тізімде жоқ.\n/list — барлық одағайлар",
     "quiz_header": "❓ <b>Тест сұрағы:</b>\n\n{q}\n\n👇 <b>Жауапты таңдаңыз:</b>",
     "correct": "✅ <b>Дұрыс! Керемет!</b>\n\n{ans}",
-    "wrong": "❌ <b>Қате!</b>\n\nСіз: {user}\nДұрыс: <b>{correct}</b>",
+    "correct_next": "✅ <b>Дұрыс!</b> Келесі сұрақ жіберілді ⬇️",
+    "wrong": "❌ <b>Қате!</b> Қайта таңдаңыз 👇",
     "btn_list": "📋 Тізім",
     "btn_help": "❓ Қолдау",
     "btn_menu": "🔙 Мәзір",
@@ -492,6 +493,15 @@ def get_quiz(qid: str):
                 return vd
     return None
 
+def get_series_info(qid: str):
+    """Returns (word, current_index, vlist) for a given quiz_id"""
+    for w, d in VIDEOS.items():
+        vlist = d if isinstance(d, list) else [d]
+        for i, vd in enumerate(vlist):
+            if vd.get("quiz_id", w) == qid:
+                return w, i, vlist
+    return None, -1, []
+
 # ──────────────────────────────────
 # BOT + DISPATCHER
 # ──────────────────────────────────
@@ -562,22 +572,26 @@ async def handle_text(msg: Message):
         else:
             await msg.answer(t("not_found", w=clean), parse_mode="HTML")
 
+async def send_quiz_item(cid: int, vd: dict, word: str):
+    """Бір ғана видео + тест жібереді"""
+    qid = vd.get("quiz_id", word)
+    cap = vd.get("caption_kz", "")
+    q = vd.get("question_kz", "")
+    opts = vd.get("options_kz", [])
+    fid = vd.get("file_id", "")
+    if fid:
+        await bot.send_video(cid, fid, caption=cap, parse_mode="HTML", supports_streaming=True)
+    await bot.send_message(cid, t("quiz_header", q=q), reply_markup=quiz_kb(qid, opts), parse_mode="HTML")
+    log.info(f"✅ {word} → {cid}")
+
 async def send_video_quiz(cid: int, word: str):
     data = VIDEOS.get(word)
     if not data:
         await bot.send_message(cid, t("not_found", w=word), parse_mode="HTML")
         return
     vlist = data if isinstance(data, list) else [data]
-    for vd in vlist:
-        qid = vd.get("quiz_id", word)
-        cap = vd.get("caption_kz", "")
-        q = vd.get("question_kz", "")
-        opts = vd.get("options_kz", [])
-        fid = vd.get("file_id", "")
-        if fid:
-            await bot.send_video(cid, fid, caption=cap, parse_mode="HTML", supports_streaming=True)
-        await bot.send_message(cid, t("quiz_header", q=q), reply_markup=quiz_kb(qid, opts), parse_mode="HTML")
-        log.info(f"✅ {word} → {cid}")
+    # Тек бірінші видео + тест жіберіледі; дұрыс жауап бергенде келесісі шығады
+    await send_quiz_item(cid, vlist[0], word)
 
 @dp.callback_query(F.data.startswith("q|"))
 async def handle_quiz_answer(cb: CallbackQuery):
@@ -601,17 +615,31 @@ async def handle_quiz_answer(cb: CallbackQuery):
     mid = cb.message.message_id
 
     if ans == c:
-        await bot.edit_message_text(
-            t("correct", ans=opts[c]),
-            chat_id=cid,
-            message_id=mid,
-            reply_markup=back_kb(),
-            parse_mode="HTML",
-        )
+        word, idx, vlist = get_series_info(qid)
+        next_idx = idx + 1 if idx >= 0 else -1
+        if word and next_idx < len(vlist):
+            # Келесі сұрақ бар — жіберіледі
+            await bot.edit_message_text(
+                t("correct_next"),
+                chat_id=cid,
+                message_id=mid,
+                reply_markup=None,
+                parse_mode="HTML",
+            )
+            await send_quiz_item(cid, vlist[next_idx], word)
+        else:
+            # Соңғы сұрақ — Мәзір батырмасы шығады
+            await bot.edit_message_text(
+                t("correct", ans=opts[c]),
+                chat_id=cid,
+                message_id=mid,
+                reply_markup=back_kb(),
+                parse_mode="HTML",
+            )
     else:
-        q = vd.get("question_kz", "")
+        # Қате — дұрыс жауапты ашпай, батырмаларды сақтайды
         await bot.edit_message_text(
-            t("wrong", user=opts[ans], correct=opts[c]),
+            t("wrong"),
             chat_id=cid,
             message_id=mid,
             reply_markup=quiz_kb(qid, opts),
