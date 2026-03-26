@@ -265,13 +265,24 @@ VIDEOS = {
         "options_kz": ["А. Қуаныш, сүйсіну 😀", "Ә. Таңқалу, таңырқау 😲", "Б. Мұң, қапа 😔", "В. Ашу, реніш 😡"],
         "correct": 1,
     },
-    "құдай-ау": {
-        "file_id": "BAACAgIAAxkBAAIHWWm9e3mK_8Poah2nrltrU6atPJRUAAK2ngAC3jrpSR5ZKDatWkbNOgQ",
-        "caption_kz": "🎬 «Құдай-ау!» — Жаужүрек мың бала",
-        "question_kz": "«Жаужүрек мың бала» фильміндегі «Құдай-ау!» одағайы қандай көңіл күйді білдіреді?",
-        "options_kz": ["А. Қуаныш 😀", "Ә. Таңқалу 😲", "Б. Қайғы, шошу 😔", "В. Риза болу 🤲"],
-        "correct": 2,
-    },
+    "құдай-ау": [
+        {
+            "quiz_id": "kudayau0",
+            "file_id": "BAACAgIAAxkBAAIHWWm9e3mK_8Poah2nrltrU6atPJRUAAK2ngAC3jrpSR5ZKDatWkbNOgQ",
+            "caption_kz": "🎬 1️⃣ «Құдай-ау!» — Жаужүрек мың бала",
+            "question_kz": "«Жаужүрек мың бала» фильміндегі «Құдай-ау!» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Қуаныш 😀", "Ә. Таңқалу 😲", "Б. Қайғы, шошу 😔", "В. Риза болу 🤲"],
+            "correct": 2,
+        },
+        {
+            "quiz_id": "kudayau1",
+            "file_id": "BAACAgIAAxkBAAIKEmnExWjcCKwh9Xz8QR_FccahLCmoAAKXjAAEKUrrq6gYrER6RzoE",
+            "caption_kz": "🎬 2️⃣ «Құдай-ай» — Көксерек",
+            "question_kz": "«Көксерек» фільміндегі «Құдай-ай» одағайы қандай көңіл күйді білдіреді?",
+            "options_kz": ["А. Қуаныш, сүйсіну 😀", "Ә. Таңқалу, кейіс 😤", "Б. Қорқу, сескену 😨", "В. Өкініш, налу 😔"],
+            "correct": 1,
+        },
+    ],
     "ура": {
         "file_id": "BAACAgIAAxkBAAIJQGnEZPeFze1BMFSShJqVqd1egK0eAAIckgAEIUqKwUDiVv_iCzoE",
         "caption_kz": "🎬 «Ура!» — Менің атым Қожа",
