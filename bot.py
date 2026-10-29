@@ -20,7 +20,7 @@ from aiohttp import web
 # ──────────────────────────────────
 # ENV
 # ──────────────────────────────────
-TOKEN = os.environ.get("BOT_TOKEN")
+TOKEN = "8763593193:AAEukYqJ1ImsDQMsc2YFaECC2T4-8JmaMXk"
 PORT = int(os.environ.get("PORT", 8000))
 APP_URL = os.environ.get("APP_URL", "")
 
